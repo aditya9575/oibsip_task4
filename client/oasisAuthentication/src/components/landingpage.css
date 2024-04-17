@@ -1,0 +1,29 @@
+.landing-page-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, blue, white);
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .landing-page-container h1 {
+    margin: 0;
+    font-size: 4em;
+    background: linear-gradient(to right, yellow, black);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .landing-page-container p {
+    margin: 0;
+    font-size: 2em;
+    background: linear-gradient(to right, yellow, black);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
