@@ -1,79 +1,6 @@
-// import React, { useState } from 'react';
-// import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
-// import axios from 'axios';
 
-// const LoginPage = ({ onLogin }) => { // Accept onLogin prop
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [error, setError] = useState('');
-//   const navigate = useNavigate(); // Initialize useNavigate
-
-//   const handleLogin = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       const response = await axios.post('http://localhost:4000/login', { username, password });
-//       if (response.data && response.data.message === 'Login successful') {
-//         // Call onLogin function upon successful login
-//         onLogin();
-//         setError('');
-//         console.log('Login successful'); // Log statement for successful login
-//         navigate('/landing'); // Navigate to the landing page
-//       } else {
-//         setError('Invalid credentials'); // Update error message for invalid credentials
-//         console.log('Login failed'); // Log statement for failed login
-//       }
-//     } catch (error) {
-//       // Handle error responses
-//       setError('An error occurred during login');
-//       console.error('Login failed:', error); // Log detailed error message
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <h2>Login</h2>
-//       <form onSubmit={handleLogin}>
-//         <div>
-//           <label htmlFor="username">Username:</label>
-//           <input
-//             type="text"
-//             id="username"
-//             value={username}
-//             onChange={(e) => setUsername(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div>
-//           <label htmlFor="password">Password:</label>
-//           <input
-//             type="password"
-//             id="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <button type="submit">Login</button>
-//         {error && <div style={{ color: 'red' }}>{error}</div>}
-//       </form>
-//       <p> Don't have an account? <Link to="/register">Register</Link></p>
-//     </div>
-//   );
-// };
-
-// export default LoginPage;
-
-
-
-
-
-
-
-
-// testing
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { Link, useNavigate } from 'react-router-dom'; 
 import axios from 'axios';
 import "./loginpage.css"
 
@@ -81,7 +8,7 @@ const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -89,19 +16,17 @@ const LoginPage = ({ onLogin }) => {
     try {
       const response = await axios.post('http://localhost:4000/login', { username, password });
       if (response.data && response.data.message === 'Login successful') {
-        // Call onLogin function upon successful login
         onLogin();
         setError('');
-        console.log('Login successful'); // Log statement for successful login
-        navigate('/landing'); // Navigate to the landing page
+        console.log('Login successful'); 
+        navigate('/landing'); 
       } else {
-        setError('Invalid credentials'); // Update error message for invalid credentials
-        console.log('Login failed'); // Log statement for failed login
+        setError('Invalid credentials');
+        console.log('Login failed'); 
       }
     } catch (error) {
-      // Handle error responses
       setError('An error occurred during login');
-      console.error('Login failed:', error); // Log detailed error message
+      console.error('Login failed:', error); 
     }
   };
 
